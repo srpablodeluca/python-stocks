@@ -1,2 +1,2 @@
 #Mi primer cosa
-Proyecto
+Proyecto tading tru Python
