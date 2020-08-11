@@ -3,7 +3,8 @@ import datetime
 import pandas_datareader.data as web
 import matplotlib.pyplot as plt
 import mplfinance as mpf
-#%matplotlib inline 
+#%matplotlib inline (en Jupyter notebook para que pueda imprimir) 
+
 
 # tesla = web.DataReader("TSLA", "yahoo")
 # aapl = web.DataReader("AAPL", "yahoo")
