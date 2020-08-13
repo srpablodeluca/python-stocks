@@ -29,12 +29,13 @@ tesla = web.DataReader("TSLA", "yahoo", start, end)
 # tesla.tail(3)
 
 # mpf.plot(tesla)
+nombre ="tesla"
 mc = mpf.make_marketcolors(base_mpf_style='nightclouds',up='g',down='r',volume="grey", inherit=True)
 s  = mpf.make_mpf_style(base_mpf_style='nightclouds',marketcolors=mc)
 
 mpf.plot(tesla,type='candle', style=s, title="Tesla Julio 2020",
              ylabel="Precio u$d", ylabel_lower="Volumen", volume=True,
-             mav=(3,6,9), savefig="testing.png", figsize=(16,8))
+             mav=(3,6,9), savefig=dict(fname=nombre), figsize=(16,8))
 plt.show()
 #mpf.plot(tesla,type='candle',mav=(3,6,9),volume=True)
 
