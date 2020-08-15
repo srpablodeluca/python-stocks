@@ -39,6 +39,7 @@ tesla_promedio = tesla[["Close","Promedio"]]
 print(tesla_promedio)
 
 plt.plot(tesla_promedio)
+plt.show()
 plt.savefig("Tesla")
 
 # nombre ="tesla"
