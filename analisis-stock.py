@@ -18,9 +18,13 @@ def grafico(stock,name):
     
 def grafico_lineal(stock1,name):
     stock_promedio = stock1[["Adj Close","Promedio"]]
+    plt.figure(figsize=(16,8))
     plt.plot(stock_promedio)
-    plt.show()
+    plt.title(name)
+    #plt.show()
     plt.savefig(name)
+    plt.clf()
+    
 
 
 def find_stock(stock2):
@@ -32,7 +36,7 @@ def find_stock(stock2):
         
         if (ticket1["Adj Close"][-1]) < p_prom:
             print(str(i_stock) +" Interesante para comprar")
-            # grafico(ticket1,i_stock)
+            #grafico(ticket1,i_stock)
             grafico_lineal(ticket1,i_stock)
             
         else:
