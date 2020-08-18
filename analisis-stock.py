@@ -48,7 +48,7 @@ def find_stock(stock2):
             print(str(i_stock) +" Interesante para comprar")
             #grafico(ticket1,i_stock)
             #grafico_lineal(ticket1,i_stock)
-            excel_file.loc[n] = [i_stock] + ["comprar"] + [ticket1["Adj Close"][-1]] + [p_prom] + [str(Excel_sma.comprar(i_stock,start_dt,end_dt))]
+            excel_file.loc[n] = [i_stock] + ["comprar"] + [ticket1["Adj Close"][-1]] + [p_prom] + [Excel_sma.comprar(i_stock,start_dt,end_dt)]
             n += 1
             #print(Excel_sma.comprar(i_stock,start_dt,end_dt))
             
@@ -64,34 +64,31 @@ stock_BA = ["ALUA.BA", "BBAR.BA", "BMA.BA", "BYMA.BA", "CEPU.BA", "COME.BA",
          "PAMP.BA", "SUPV.BA", "TECO2.BA", "TGNO4.BA", "TGSU2.BA", "TRAN.BA", 
          "TXAR.BA", "VALO.BA", "YPFD.BA"]
 
+
 stock_cedears = ['MMM','ANF','ADGO','ADBE','AMD','AEG','AEM','BABA',
-                  'ACH','AMZN','ABEV','AMX','AXP','AIG','AMGN']
-
-
-# stock_cedears = ['MMM','ANF','ADGO','ADBE','AMD','AEG','AEM','BABA',
-#                   'ACH','AMZN','ABEV','AMX','AXP','AIG','AMGN',
-#                   'ADI','AAPL','AMAT','ARCO','ADP','AVY','CAR','BIDU',
-#                   'BBD','BSBR','BCS','BAYN.DE','BBVA',
-#                   'BIIB','BRFS','BMY','CVX','LFC','CHL','CHA',
-#                   'CEO','SBS','ELP',
-#                   'SID','GLW','DESP','DTEA','EBAY',
-#                   'LLY','ERJ','XOM','FSLR','FMX','FMCC','FCX','GRMN',
-#                   'GGB','GILD','GFI','PAC','ASR','HOG','HMY',
-#                   'HDB','HON','HWM','IBN','INFY','ING','INTC','IBM',
-#                   'IFF','ITUB','JPM','JNJ','JCI','JOYY','KMB','KGC',
-#                   'PHG','KEP','ERIC','LYG','LMT','MMC','MCD','MDT','MELI','MRK',
-#                   'MUFG','MFG','MBT','MSI','NGG','NTCO','NTES','NFLX',
-#                   'NEM','NKE','NVS','NVDA','ORCL',
-#                   'ORAN','PCAR','PYPL','PBR','PFE',
-#                   'QCOM','ROST','CRM','SAP','SNAP','SNE','SBUX',
-#                   'SUZ','SYY','TSM','TGT','VIV','TEN','TSLA',
-#                   'HSY','DIS','TMO','TSU','TOT','TRIP','TWTR','USB',
-#                   'UGP','URBN','VALE','VEDL','WMT','WFC',
-#                   'WBK','AUY','YELP', "GOOGL","GLNT.BA", "ABT","AZN","BA",
-#                   "BHP","BIIB","BNG.BA","BP","C", "CAT","CSCO","CX",
-#                   "FB","GE","GOLD","GSK","KO","LVS","MSFT","PEP","PG",
-#                   "PTR","RIO","T","TM","TXN","TX","UN","V","VIST",
-#                   "VOD","VZ","X","XROX.BA"] 
+                  'ACH','AMZN','ABEV','AMX','AXP','AIG','AMGN',
+                  'ADI','AAPL','AMAT','ARCO','ADP','AVY','CAR','BIDU',
+                  'BBD','BSBR','BCS','BAYN.DE','BBVA',
+                  'BIIB','BRFS','BMY','CVX','LFC','CHL','CHA',
+                  'CEO','SBS','ELP',
+                  'SID','GLW','DESP','DTEA','EBAY',
+                  'LLY','ERJ','XOM','FSLR','FMX','FMCC','FCX','GRMN',
+                  'GGB','GILD','GFI','PAC','ASR','HOG','HMY',
+                  'HDB','HON','HWM','IBN','INFY','ING','INTC','IBM',
+                  'IFF','ITUB','JPM','JNJ','JCI','JOYY','KMB','KGC',
+                  'PHG','KEP','ERIC','LYG','LMT','MMC','MCD','MDT','MELI','MRK',
+                  'MUFG','MFG','MBT','MSI','NGG','NTCO','NTES','NFLX',
+                  'NEM','NKE','NVS','NVDA','ORCL',
+                  'ORAN','PCAR','PYPL','PBR','PFE',
+                  'QCOM','ROST','CRM','SAP','SNAP','SNE','SBUX',
+                  'SUZ','SYY','TSM','TGT','VIV','TEN','TSLA',
+                  'HSY','DIS','TMO','TSU','TOT','TRIP','TWTR','USB',
+                  'UGP','URBN','VALE','VEDL','WMT','WFC',
+                  'WBK','AUY','YELP', "GOOGL","GLNT.BA", "ABT","AZN","BA",
+                  "BHP","BIIB","BNG.BA","BP","C", "CAT","CSCO","CX",
+                  "FB","GE","GOLD","GSK","KO","LVS","MSFT","PEP","PG",
+                  "PTR","RIO","T","TM","TXN","TX","UN","V","VIST",
+                  "VOD","VZ","X","XROX.BA"] 
 
 
 
@@ -99,7 +96,8 @@ stock_cedears = ['MMM','ANF','ADGO','ADBE','AMD','AEG','AEM','BABA',
 start_dt = datetime.datetime(2020,6,11)
 end_dt = datetime.datetime(2020,9,17)
 #end_dt = datetime.datetime.today()
-excel_file = pd.DataFrame(columns=["Stocks","Comprar","Adj Close","Promedio", "Sma Bajo (True)"])
+excel_file = pd.DataFrame(columns=["Stocks","Comprar","Adj Close","Promedio",
+                                   "Comprar2"])
 
 
 print("CEDEARS")
